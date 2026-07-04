@@ -21,3 +21,5 @@ playerPacketHelper = require("custom/playerPacketHelper")
 noteWriting = require("custom/noteWriting")
 playerCorpsesPersist = require("custom/playerCorpsesPersist")
 starterEquipment = require("custom/starterEquipment")
+allyQuestShare = require("custom/allyQuestShare")
+
