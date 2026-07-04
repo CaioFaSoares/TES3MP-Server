@@ -1,5 +1,5 @@
 services:
-  server:
+  bonebreeze-server:
     build: .
     environment:
       - TES3MP_SERVER_GENERAL_HOSTNAME="Containerized TES3MP Server"

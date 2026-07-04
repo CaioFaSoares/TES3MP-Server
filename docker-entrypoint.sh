@@ -9,13 +9,17 @@ if [ ! -d "/server/data/data" ]; then
   cp -a /server/CoreScripts/. /server/data/
 fi
 
-# 2. Sync active scripts to the server data folder
+# 2. Sync active scripts and data files to the server folders
 echo "Installing active scripts..."
 mkdir -p /server/data/scripts/custom
+mkdir -p /server/data/data/custom
 
 if [ -d "/server/scripts_active" ]; then
-  cp -r /server/scripts_active/. /server/data/scripts/custom/
-  echo "Copied active scripts to /server/data/scripts/custom/"
+  # Copy Lua scripts
+  find /server/scripts_active -maxdepth 1 -name "*.lua" -exec cp {} /server/data/scripts/custom/ \;
+  # Copy JSON configs
+  find /server/scripts_active -maxdepth 1 -name "*.json" -exec cp {} /server/data/data/custom/ \;
+  echo "Copied active scripts and JSON data files from scripts_active/."
 fi
 
 # 3. Handle customScripts.lua

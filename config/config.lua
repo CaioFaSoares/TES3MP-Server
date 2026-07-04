@@ -142,7 +142,7 @@ config.synchronizedClientScriptIds = {
 }
 
 -- Whether the instanced spawn should be used instead of the noninstanced one
-config.useInstancedSpawn = true
+config.useInstancedSpawn = false
 
 -- Where players will be spawned if an instanced spawn is desired, with a different clean copy of
 -- this cell existing for each player
