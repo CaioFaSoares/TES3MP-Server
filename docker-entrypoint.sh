@@ -18,11 +18,14 @@ if [ -d "/server/scripts_active" ]; then
   echo "Copied active scripts to /server/data/scripts/custom/"
 fi
 
-# 3. Generate customScripts.lua automatically to load the active scripts
+# 3. Handle customScripts.lua
 CUSTOM_SCRIPTS_FILE="/server/data/scripts/customScripts.lua"
-echo "Generating customScripts.lua..."
-
-cat << 'EOF' > "$CUSTOM_SCRIPTS_FILE"
+if [ -f "/server/config/customScripts.lua" ]; then
+  echo "Mirroring customScripts.lua from config override..."
+  cp /server/config/customScripts.lua "$CUSTOM_SCRIPTS_FILE"
+else
+  echo "Generating customScripts.lua automatically..."
+  cat << 'EOF' > "$CUSTOM_SCRIPTS_FILE"
 -- Load up your custom scripts here! Ideally, your custom scripts will be placed in the scripts/custom folder and then get loaded like this:
 --
 -- require("custom/yourScript")
@@ -31,15 +34,16 @@ cat << 'EOF' > "$CUSTOM_SCRIPTS_FILE"
 
 EOF
 
-# For each .lua file in /server/scripts_active, append the require statement
-if [ -d "/server/scripts_active" ]; then
-  for filepath in /server/scripts_active/*.lua; do
-    if [ -f "$filepath" ]; then
-      filename=$(basename "$filepath" .lua)
-      echo "require(\"custom/$filename\")" >> "$CUSTOM_SCRIPTS_FILE"
-      echo "  Registered script: $filename"
-    fi
-  done
+  # For each .lua file in /server/scripts_active, append the require statement
+  if [ -d "/server/scripts_active" ]; then
+    for filepath in /server/scripts_active/*.lua; do
+      if [ -f "$filepath" ]; then
+        filename=$(basename "$filepath" .lua)
+        echo "require(\"custom/$filename\")" >> "$CUSTOM_SCRIPTS_FILE"
+        echo "  Registered script: $filename"
+      fi
+    done
+  fi
 fi
 
 # 4. Mirror config files from external config directory if they exist
