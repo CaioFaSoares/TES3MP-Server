@@ -1,0 +1,6 @@
+# Ignore the entire data directory (contains standard server files, scripts, and runtime database)
+data/
+
+# OS-specific files
+.DS_Store
+Thumbs.db

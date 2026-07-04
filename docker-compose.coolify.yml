@@ -1,0 +1,23 @@
+# docker-compose.coolify.yml
+# Specific docker-compose configuration for Coolify deployment
+
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      # You can override server settings here via environment variables:
+      - TES3MP_SERVER_GENERAL_HOSTNAME="TES3MP Server on Coolify"
+    volumes:
+      # Coolify automatically creates persistent volumes for named volumes.
+      # This volume stores player progress, cells, world state, and logs.
+      - tes3mp-data:/server/data
+    ports:
+      # Exposes the default UDP port for clients to connect
+      - "25565:25565/udp"
+    restart: always
+
+volumes:
+  # This named volume preserves player and world progress across container updates and builds
+  tes3mp-data:
