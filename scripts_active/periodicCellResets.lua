@@ -93,6 +93,9 @@ periodicCellResets.exemptCellNamesExact = { -- Exact cell names included in this
 	"-2, -9",
 	"-2, -10",
 	
+	-- MERCHANTS (Prevent items stored near Creeper/Mudcrab from being wiped by daily resets)
+	"Caldera, Ghorak Manor", -- Creeper
+	"2, -12",               -- Mudcrab Merchant (Exterior cell)
 }
 
 -- Similar cell names:
