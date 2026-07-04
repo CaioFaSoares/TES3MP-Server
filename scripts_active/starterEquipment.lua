@@ -52,7 +52,7 @@ end
 function starterEquipment.GiveItems(pid,items)
     if items ~= nil then
         for _,item in pairs(items) do
-            inventoryHelper.addItem(Players[pid].data.inventory, item.refId, item.count)
+            inventoryHelper.addItem(Players[pid].data.inventory, item.refId, item.count, item.charge or -1, item.enchantmentCharge or -1, item.soul or "")
         end
         Players[pid]:LoadItemChanges(items,enumerations.inventory.ADD)
     end

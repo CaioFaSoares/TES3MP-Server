@@ -17,7 +17,8 @@ starterEquipmentConfig.giveHighestArmor = true
 
 --Items given to all players regardless of skills
 starterEquipmentConfig.baseItems = {
-    {refId = "gold_001", count = 50}
+    {refId = "gold_001", count = 50},
+    {refId = "bk_a1_1_caiuspackage", count = 1, charge = -1, enchantmentCharge = -1, soul = ""}
 }
 
 --Table of starter items
