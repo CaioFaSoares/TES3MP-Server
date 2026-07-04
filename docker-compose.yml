@@ -2,7 +2,7 @@ services:
   bonebreeze-server:
     build: .
     environment:
-      - TES3MP_SERVER_GENERAL_HOSTNAME="Containerized TES3MP Server"
+      - TES3MP_SERVER_GENERAL_HOSTNAME="Cydonia's Bonebreeze TES3MP Server"
     volumes:
       - "./data:/server/data"
       - "./config:/server/config"

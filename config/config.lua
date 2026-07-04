@@ -69,7 +69,7 @@ config.worldStartupScripts = {"Startup", "BMStartUpScript"}
 config.playerStartupScripts = {"VampireCheck", "WereCheckScript"}
 
 -- Whether the world time should continue passing when there are no players on the server
-config.passTimeWhenEmpty = false
+config.passTimeWhenEmpty = true
 
 -- The hours at which night is regarded as starting and ending, used to pass time using a
 -- different timescale when it's night
@@ -89,25 +89,25 @@ config.allowWildernessRest = true
 config.allowWait = true
 
 -- Whether journal entries should be shared across the players on the server or not
-config.shareJournal = true
+config.shareJournal = false
 
 -- Whether faction ranks should be shared across the players on the server or not
-config.shareFactionRanks = true
+config.shareFactionRanks = false
 
 -- Whether faction expulsion should be shared across the players on the server or not
 config.shareFactionExpulsion = false
 
 -- Whether faction reputation should be shared across the players on the server or not
-config.shareFactionReputation = true
+config.shareFactionReputation = false
 
 -- Whether dialogue topics should be shared across the players on the server or not
-config.shareTopics = true
+config.shareTopics = false
 
 -- Whether crime bounties should be shared across players on the server or not
 config.shareBounty = false
 
 -- Whether reputation should be shared across players on the server or not
-config.shareReputation = true
+config.shareReputation = false
 
 -- Whether map exploration should be shared across players on the server or not
 config.shareMapExploration = false
