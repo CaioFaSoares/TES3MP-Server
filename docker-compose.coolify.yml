@@ -8,7 +8,7 @@ services:
       dockerfile: Dockerfile
     environment:
       # You can override server settings here via environment variables:
-      - TES3MP_SERVER_GENERAL_HOSTNAME="Cydonia's Bonebreeze TES3MP Server"
+      - TES3MP_SERVER_GENERAL_HOSTNAME="Cydonia Bonebreeze TES3MP Server"
     volumes:
       # Coolify automatically creates persistent volumes for named volumes.
       # This volume stores player progress, cells, world state, and logs.
