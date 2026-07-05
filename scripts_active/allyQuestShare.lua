@@ -8,25 +8,26 @@
 
 local allyQuestShare = {}
 
--- Helper to check if a journal list contains a quest entry/index
+-- Helper to check if a journal list contains a quest entry/index (case-insensitive quest comparison)
 local function hasJournalEntry(journal, quest, index)
     for _, item in ipairs(journal) do
-        if item.quest == quest and item.index == index then
+        if string.lower(item.quest) == string.lower(quest) and item.index == index then
             return true
         end
     end
     return false
 end
 
--- Helper to check if a topics list contains a topicId
+-- Helper to check if a topics list contains a topicId (case-insensitive comparison)
 local function hasTopic(topics, topicId)
     for _, id in ipairs(topics) do
-        if id == topicId then
+        if string.lower(id) == string.lower(topicId) then
             return true
         end
     end
     return false
 end
+
 
 -- Bidirectional merge of journal and topics between playerA and playerB
 local function mergeAlliesData(playerA, playerB)
