@@ -4,7 +4,7 @@ config = {}
 config.dataPath = tes3mp.GetDataPath()
 
 -- The game mode displayed for this server in the server browser
-config.gameMode = "Default"
+config.gameMode = "Cydonia"
 
 -- Time to login, in seconds
 config.loginTime = 60
@@ -69,7 +69,7 @@ config.worldStartupScripts = {"Startup", "BMStartUpScript"}
 config.playerStartupScripts = {"VampireCheck", "WereCheckScript"}
 
 -- Whether the world time should continue passing when there are no players on the server
-config.passTimeWhenEmpty = true
+config.passTimeWhenEmpty = false
 
 -- The hours at which night is regarded as starting and ending, used to pass time using a
 -- different timescale when it's night
