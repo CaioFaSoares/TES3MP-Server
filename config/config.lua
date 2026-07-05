@@ -4,7 +4,7 @@ config = {}
 config.dataPath = tes3mp.GetDataPath()
 
 -- The game mode displayed for this server in the server browser
-config.gameMode = "Cydonia"
+config.gameMode = "cydonia"
 
 -- Time to login, in seconds
 config.loginTime = 60

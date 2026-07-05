@@ -6,9 +6,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    environment:
-      # You can override server settings here via environment variables:
-      - TES3MP_SERVER_HOSTNAME="Cydonia's Bonebreeze TES3MP Server"
     volumes:
       # Mount relative directory on the host VPS (Coolify will manage this persistently)
       - ./data:/server/data
